@@ -1,0 +1,14 @@
+span {
+    /* display: block; */
+    display: inline-block; /*allow inline elements have top and bottom margin*/
+    margin: 20px;
+    padding: 20px;
+}
+
+div {
+    /* display: inline; */
+    border: 2px solid crimson;
+    margin: 20px;
+    padding: 20px;
+
+}

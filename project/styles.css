@@ -1,0 +1,276 @@
+/* Positions:
+    static - default;
+    relative - to its original position;
+    fixed - relative to viewport
+    absolute - relative to closing parent
+    sticky - mixture of static and fixed -> it fixed when you scroll through
+*/
+
+/*Pseudo Classes:
+    :hover - on mouse
+    :focus - when clicked
+    :first-child - first child of parent
+    https://www.w3schools.com/css/css_pseudo_elements.asp
+*/
+
+/*Pseudo Elements:
+    ::first-line, ::first-letter, ::selection, ::before, ::after
+*/
+
+/*Media queries
+    -how style at viewport
+    viewport meta tag
+    responsive images
+*/
+
+body, ul, li, h1, h2, a { /* reseting user-agent-stylesheet*/
+    margin: 0;
+    padding: 0;
+    font-family: arial;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    background-color: #f63232;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    color: white;
+    border: 8px solid white;
+    padding: 6px 12px;
+    display: inline-block;
+    border-radius: 36px;
+}
+
+.banner {
+    position: relative;
+}
+
+.banner img{
+    max-width: 100%;
+}
+
+.banner .welcome {
+    background-color: #feb614;
+    color: white;
+    padding: 30px;
+    position: absolute;
+    left: 0;
+    top: 30%; /*in 30& of parent*/
+    font-size: 60px;
+
+}
+
+/* .banner h2{
+    font-size: 74px;
+} */
+
+.banner .welcome span {
+    font-size: 1.4em; /*1.3 x 60px OMG */
+}
+
+nav{
+    background-color: #f4f4f4;
+    padding: 20px;
+    position: sticky;
+    top: 104px;
+}
+
+nav ul {
+    white-space: nowrap;
+    max-width: 1200px;
+    margin: 0 auto; /*if there is space from left or right, make auto margin*/
+}
+
+nav li {
+    width: 25%;
+    display: inline-block;
+    font-size: 24px;
+}
+
+nav li a {
+    text-decoration: none;
+    color: #4b4b4b;
+}
+
+nav li a.join{
+    color: #f63232;
+}
+
+main {
+    max-width: 100%;
+    width: 1200px; /* 1200px or less, if we have smaller viewport */
+    margin: 80px auto; /*margins autodistribiuted left and right*/
+    padding: 0 40px;
+    box-sizing: border-box; /*if u want include padding (and border) to ur width, you need to add border-box option */
+}
+
+article {
+    color: #f63232;
+}
+
+article p {
+    line-height: 2em;
+    color: #4b4b4b;
+}
+
+.images{
+    text-align: center;
+    margin: 80px 0;
+    white-space: nowrap;
+}
+
+.images li{
+    display: inline-block;
+    width: 40%;
+    margin: 20px 5%;
+}
+
+.images li img{
+    max-width: 100%
+}
+
+section.join{
+    background: #f4f4f4;
+    text-align: center;
+    padding: 60px 20px;
+    color: #4b4b4b;
+}
+
+.join h2{
+    font-size: 36px;
+}
+
+form input{
+    margin: 20px 0;
+    padding: 10px 20px;
+    font-size: 24px;
+    border-radius: 28px;
+    border: 4px solid white;
+}
+
+footer {
+    background: #f63232;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+/*Pseudo classes */
+
+nav li a:hover {
+    text-decoration: underline;
+
+}
+
+.images li:hover{
+    position: relative;
+    top: -4px;
+}
+
+form input:focus{
+    border: 4px dashed #4b4b4b;
+    outline: none; /*to get rid of this strange frame */
+}
+
+form input:valid{
+    border: 4px solid #71d300;
+}
+
+/* nav li:first-child{
+    border: 3px solid #f63232;
+} */
+
+article p::first-line{
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+section.join p::first-letter{
+    font-size: 1.5em;
+}
+
+section.join p::selection{
+    background-color: #f63232;
+    color: white;
+}
+
+article p::after{
+    content: '...'
+}
+
+/* responsive style */
+
+@media screen and (max-width: 1400px){ /*reapply style for devices smaller then 1400px*/
+
+    .banner .welcome h2{
+       font-size: 60px;
+    }
+
+    nav li{
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 960px){ 
+
+    .banner .welcome h2{
+       font-size: 40px;
+    }
+
+}
+
+@media screen and (max-width: 700px){ 
+
+    .banner .welcome {
+       position: relative;
+       text-align: center;
+       padding: 10px;
+    }
+
+    .banner .welcome br {
+        display: none;
+    }
+
+    .banner .welcome h2 {
+        font-size: 25px;
+    }
+
+    .banner .welcome span {
+        font-size: 1em;
+    }
+
+    .images li{
+        width: 100%;
+        margin: 20px auto;
+        display: block;
+
+    }
+
+}
+
+
+@media screen and (max-width: 560px){ 
+
+    nav li{
+        font-size: 20px;
+        display: block;
+        width: 100%;
+        margin: 12px 0;
+    }
+
+    header {
+        position: relative;
+    }
+
+    nav{
+        top: 0;
+    }
+
+}

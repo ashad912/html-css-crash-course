@@ -1,0 +1,19 @@
+div{
+    color: lightcoral; /*text prop - inherited by p tag*/
+    border: 1px solid grey; 
+    margin: 40px;
+    font-weight: bold; /*text prop - inherited by p tag*/
+}
+
+div p{
+    border: inherit; /*p tag forced to inherit parent prop */
+    margin: inherit;
+    color: crimson;
+}
+
+p{
+    color: orange;
+}
+
+/* div p is more specific - so we get crismon color prop */
+/* CASCADE: important!(?) > classes > media queries > normal */

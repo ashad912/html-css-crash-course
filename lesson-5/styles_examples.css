@@ -1,0 +1,49 @@
+p.error{
+    color: red;
+}
+
+p.success{
+    color: green;
+}
+
+p.success.feedback{
+    border: 3px dashed; /*gets border color from 'success' class*/
+}
+
+#content {
+    background-color: lightgray;
+    padding: 20px;
+}
+
+div p {
+    color: purple;
+}
+
+a[href]{
+    background-color: #3dd13d; /*a tag with prop href*/
+}
+
+a[href*="thenetninja"]{ /* with * (asterix) - all a which includes in href passed prop*/
+    background-color: orange; /*if we move this rule above a[href], it stops work (will be older in order)*/
+    color: white;
+    text-decoration: none;
+    font-weight:  bold;
+    text-transform: uppercase;
+}
+a[href$="com"]{ /* ends with 'com' */
+    color: white;
+    background: red;
+    border: 2px solid blue;
+
+}
+
+
+/* 
+    p.error <- p tags with class error
+    p.success.feedback <- p tags having both classes: success and feedback
+    div#content -> div tag (only one!) with 'content' id
+
+    p.success (specific class) has bigger priority than "div p"!
+    div .error <- error class (another tag/element) inside div
+    div.error <- div tag with class error
+*/
